@@ -1,0 +1,73 @@
+use DepartamentoVendas;
+
+INSERT INTO item_ativo (nome_item, estoque_item)
+VALUES ('Iphone 6', '25');
+
+INSERT INTO item_ativo (nome_item, estoque_item)
+VALUES ('Iphone 7', '37');
+
+INSERT INTO item_ativo (nome_item, estoque_item)
+VALUES ('Iphone 8', '14');
+
+INSERT INTO cliente (nome_cliente)
+VALUES ('Ricardo');
+
+INSERT INTO cliente (nome_cliente)
+VALUES ('Pedro');
+
+INSERT INTO cliente (nome_cliente)
+VALUES ('Alex');
+
+INSERT INTO nota_fiscal (cod_cliente, cod_item, quantidade_nota)
+VALUES ('3', '3', '2');
+
+INSERT INTO nota_fiscal (cod_cliente, cod_item, quantidade_nota)
+VALUES ('2', '2', '2');
+
+INSERT INTO nota_fiscal (cod_cliente, cod_item, quantidade_nota)
+VALUES ('1', '1', '3');
+
+INSERT INTO regiao (bairro_regiao, cidade_regiao, estado_regiao)
+VALUES ('Jardim Lajeado', 'São Paulo', 'São Paulo');
+
+INSERT INTO regiao (bairro_regiao, cidade_regiao, estado_regiao)
+VALUES ('Jardim Robru', 'São Paulo', 'São Paulo');
+
+INSERT INTO regiao (bairro_regiao, cidade_regiao, estado_regiao)
+VALUES ('São Miguel', 'São Paulo', 'São Paulo');
+
+INSERT INTO vendedor (cod_regiao, nome_vendedor)
+VALUES ('2', 'Andre');
+
+INSERT INTO vendedor (cod_regiao, nome_vendedor)
+VALUES ('1', 'Roberto');
+
+INSERT INTO vendedor (cod_regiao, nome_vendedor)
+VALUES ('3', 'Carlos');
+
+INSERT INTO veiculo (cod_vendedor, marca_veiculo)
+VALUES ('1', 'Fiat');
+
+INSERT INTO veiculo (cod_vendedor, marca_veiculo)
+VALUES ('2', 'Chevrolet');
+
+INSERT INTO veiculo (cod_vendedor, marca_veiculo)
+VALUES ('3', 'Ferrari');
+
+INSERT INTO pedido (cod_item, cod_nota)
+VALUES ('1', '1');
+
+INSERT INTO pedido (cod_item, cod_nota)
+VALUES ('2', '2');
+
+INSERT INTO pedido (cod_item, cod_nota)
+VALUES ('3', '3');
+
+INSERT INTO ponto_estrategico (cod_regiao, endereco_ponto)
+VALUES ('1', 'fatec');
+
+INSERT INTO ponto_estrategico (cod_regiao, endereco_ponto)
+VALUES ('2', 'etec');
+
+INSERT INTO ponto_estrategico (cod_regiao, endereco_ponto)
+VALUES ('3', 'assai');

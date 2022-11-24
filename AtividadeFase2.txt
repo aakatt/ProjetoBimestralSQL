@@ -1,0 +1,58 @@
+create database DepartamentoVendas;
+use DepartamentoVendas;
+
+create table item_ativo(
+	cod int primary key identity,
+	nome_item varchar (50) not null,
+	estoque_item varchar (50) not null,
+);
+
+create table cliente(
+	cod int primary key identity,
+	nome_cliente varchar (50) not null
+);
+
+create table nota_fiscal(
+	cod int primary key identity,
+	cod_cliente int not null,
+	cod_item int not null,
+	quantidade_nota varchar (50) not null,
+	foreign key (cod_item) references item_ativo(cod),
+	foreign key (cod_cliente) references cliente(cod)
+);
+
+create table regiao(
+	cod int primary key identity,
+	bairro_regiao varchar (50) not null,
+	cidade_regiao varchar (50) not null,
+	estado_regiao varchar (50) not null
+);
+
+create table vendedor(
+	cod int primary key identity,
+	cod_regiao int not null,
+	nome_vendedor varchar (50) not null,
+	foreign key (cod_regiao) references regiao(cod)
+);
+
+create table veiculo(
+	cod int primary key identity,
+	cod_vendedor int not null,
+	marca_veiculo varchar (50) not null,
+	foreign key (cod_vendedor) references vendedor(cod)
+);
+
+create table pedido(
+	cod int primary key identity,
+	cod_item int not null,
+	cod_nota int not null,
+	foreign key (cod_item) references item_ativo(cod),
+	foreign key (cod_nota) references nota_fiscal(cod)
+);
+
+create table ponto_estrategico(
+	cod int primary key identity,
+	cod_regiao int not null,
+	endereco_ponto varchar (50) not null,
+	foreign key (cod_regiao) references regiao(cod)
+);

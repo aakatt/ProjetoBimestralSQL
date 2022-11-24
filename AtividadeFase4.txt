@@ -1,0 +1,13 @@
+use DepartamentoVendas;
+
+SELECT pedido.cod AS "Registro", nota_fiscal.quantidade_nota AS "Quantidade", item_ativo.nome_item AS "Item" FROM pedido
+INNER JOIN item_ativo ON pedido.cod_item = item_ativo.cod
+INNER JOIN nota_fiscal ON pedido.cod_item = nota_fiscal.cod_item
+
+SELECT * FROM vendedor AS v 
+WHERE cod IN 
+	(
+SELECT cod FROM veiculo as v2 WHERE v.cod = v2.cod_vendedor
+)
+			
+  
